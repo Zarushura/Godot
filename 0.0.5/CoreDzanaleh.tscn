@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/CoreDzanaleh.png" type="Texture" id=1]
+[ext_resource path="res://Cores.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.53, 0.995 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.952511, 0.976531, 0.0305167, 1, 1, 0.744141, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = 1.0
+max_value = 1024.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.964125, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+trail_size_modifier = SubResource( 4 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 10.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 10.0
+scale = 2.0
+scale_random = 0.91
+color_ramp = SubResource( 2 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 66, 89 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 66, 0, 66, 89 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 132, 0, 66, 89 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 198, 0, 66, 89 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 18.4034
+height = 21.9383
+
+[node name="CoreDzanaleh" type="KinematicBody2D" groups=[
+"Dzanaleh",
+]]
+z_index = 1
+collision_layer = 16
+collision_mask = 2147483649
+script = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 20
+lifetime = 5.0
+process_material = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 11 )

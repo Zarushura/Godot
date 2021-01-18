@@ -1,0 +1,491 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://gates.gd" type="Script" id=1]
+[ext_resource path="res://assets/wormtunnel2.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/lightSquare.png" type="Texture" id=3]
+[ext_resource path="res://assets/starflare.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/lightCircle.png" type="Texture" id=5]
+[ext_resource path="res://assets/wormdoor.png" type="Texture" id=6]
+[ext_resource path="res://shaders/blackhole.shader" type="Shader" id=7]
+[ext_resource path="res://assets/starflare.png" type="Texture" id=8]
+[ext_resource path="res://assets/wormtunnel1.jpg" type="Texture" id=9]
+[ext_resource path="res://shaders/circle.shader" type="Shader" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 162.514
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 10 )
+shader_param/amt = 1.0
+
+[sub_resource type="AnimatedTexture" id=3]
+flags = 4
+frames = 2
+fps = 7.0
+frame_0/texture = ExtResource( 9 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 7 )
+shader_param/swirl = 20.0
+shader_param/phase = 20.0
+shader_param/pi = 3.14
+
+[sub_resource type="Animation" id=5]
+resource_name = "enter"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("hole/entrance:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("hole/entrance:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("hole/middle:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.7 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("hole/middle:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.7 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("hole/light ring 1:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("hole/light ring 1:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("hole/light ring 2:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 1, 5.7 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("hole/light ring 2:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7, 1, 5.7 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("hole/light ring 3:scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.3, 1.6, 6.3 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("hole/light ring 3:scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.3, 1.6, 6.3 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("hole/light:scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.1, 4.5 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("hole/light:scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0.1, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.1, 4.5 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("hole/light:energy")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.1, 4.5, 5.3 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("hole/exit hole:scale:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.8, 5.9 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("hole/exit hole:scale:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0.01, -0.25, 0, 0.25, 0, 0.01, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2.8, 5.9 )
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 1.1, 5.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_world"
+}, {
+"args": [  ],
+"method": "transition_end"
+} ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("hole/light:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("hole/light ring 3:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("hole/light ring 2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("hole/light ring 1:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("hole/exit hole:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("hole/middle:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "ready"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("hole:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 700, -0.25, 0, 0.25, 0, -500, -2.8668, 4.20056, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hole/middle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hole/exit hole:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("hole/light ring 1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("hole/light ring 2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("hole/light ring 3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("hole/light:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="AnimationNodeOneShot" id=7]
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "ready"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "enter"
+
+[sub_resource type="AnimationNodeBlendTree" id=10]
+graph_offset = Vector2( -66.5977, 142.024 )
+nodes/holego/node = SubResource( 7 )
+nodes/holego/position = Vector2( 300, 240 )
+nodes/holespawn/node = SubResource( 8 )
+nodes/holespawn/position = Vector2( 100, 140 )
+nodes/holestart/node = SubResource( 9 )
+nodes/holestart/position = Vector2( 100, 280 )
+nodes/output/position = Vector2( 580, 140 )
+node_connections = [ "output", 0, "holego", "holego", 0, "holespawn", "holego", 1, "holestart" ]
+
+[node name="transition" type="Node2D"]
+rotation = -3.14159
+script = ExtResource( 1 )
+
+[node name="hole" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( -961.961, -500 )
+
+[node name="door" type="Area2D" parent="hole"]
+position = Vector2( 0.169495, -0.0156286 )
+
+[node name="doorCollision" type="CollisionShape2D" parent="hole/door"]
+position = Vector2( -0.176758, -0.176758 )
+shape = SubResource( 1 )
+
+[node name="middle" type="Sprite" parent="hole"]
+visible = false
+light_mask = 2
+material = SubResource( 2 )
+position = Vector2( 0.171875, -0.0273438 )
+scale = Vector2( 0.01, 0.01 )
+z_index = 2
+texture = SubResource( 3 )
+offset = Vector2( 8.72208, -275.586 )
+flip_v = true
+
+[node name="exit hole" type="Light2D" parent="hole"]
+visible = false
+position = Vector2( 0.179688, -0.230469 )
+rotation = -6.28319
+scale = Vector2( 0.01, 0.01 )
+z_index = 2
+texture = ExtResource( 8 )
+offset = Vector2( -53.5137, -68.7882 )
+texture_scale = 2.81
+mode = 3
+range_z_min = 2
+range_item_cull_mask = 2
+
+[node name="light ring 1" type="Sprite" parent="hole"]
+visible = false
+self_modulate = Color( 27.8, 15.78, 21.25, 0.01 )
+light_mask = 2
+position = Vector2( 0.0078125, 0.132813 )
+rotation = -4.46638e-06
+scale = Vector2( 0.01, 0.01 )
+z_index = 2
+texture = ExtResource( 5 )
+offset = Vector2( -15.835, -26.005 )
+
+[node name="light ring 2" type="Sprite" parent="hole"]
+visible = false
+self_modulate = Color( 27.8, 14.53, 21.25, 0.01 )
+light_mask = 2
+position = Vector2( 0.1875, -0.0429688 )
+rotation = -6.28319
+scale = Vector2( 0.01, 0.01 )
+z_index = 2
+texture = ExtResource( 5 )
+offset = Vector2( -15.835, -26.005 )
+
+[node name="light ring 3" type="Sprite" parent="hole"]
+visible = false
+self_modulate = Color( 27.82, 14.53, 21.25, 0.01 )
+light_mask = 2
+position = Vector2( 0.1875, -0.222656 )
+rotation = -6.28319
+scale = Vector2( 0.01, 0.01 )
+z_index = 2
+texture = ExtResource( 5 )
+offset = Vector2( -15.835, -26.005 )
+
+[node name="light" type="Light2D" parent="hole"]
+visible = false
+position = Vector2( 0.71582, -0.574707 )
+rotation = -4.46638e-06
+scale = Vector2( 0.1, 0.1 )
+z_index = 2
+texture = ExtResource( 4 )
+offset = Vector2( -15.835, -26.005 )
+energy = 2.0
+range_z_min = 2
+range_item_cull_mask = 2
+
+[node name="entrance" type="Sprite" parent="hole"]
+light_mask = 2
+material = SubResource( 4 )
+position = Vector2( 0.592713, 3.05176e-05 )
+z_index = 4
+texture = ExtResource( 6 )
+
+[node name="white" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -953.123, -546 )
+scale = Vector2( 1139.83, 791.587 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "ready"
+anims/enter = SubResource( 5 )
+anims/ready = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer"]
+tree_root = SubResource( 10 )
+anim_player = NodePath("..")
+active = true
+parameters/holego/active = false
+[connection signal="body_entered" from="hole/door" to="." method="_on_door_body_entered"]

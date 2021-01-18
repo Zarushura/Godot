@@ -1,0 +1,419 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/EnemyDevourerWorm.png" type="Texture" id=1]
+[ext_resource path="res://EnemyDevourerWorm.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 85.7508
+
+[sub_resource type="Animation" id=4]
+resource_name = "damage"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("torus3/torus:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 10, 9, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("torus1/torus:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 10, 9, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("torus2/torus:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 10, 9, 8, 9, 10, 11 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("torus4/torus:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 10, 9, 8, 9, 10, 11 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("chest/chest:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "normal"
+length = 1.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("torus3/torus:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("torus1/torus:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("torus2/torus:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 1, 0, 1, 2, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("torus4/torus:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 1, 0, 1, 2, 3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("chest/chest:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("WormSkeleton/chest:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.2, 56.9872, 300, -0.25, 0, 0.25, 0, 0, -0.13, 54.9136, 0.13, -69.5024, -300, -0.25, 0, 0.25, 0, 0, -0.15, -63.2816, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("WormSkeleton/chest:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -50, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 50, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WormSkeleton/chest/head:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 50.0, 1.0, -50.0, 1.0 ]
+}
+
+[node name="EnemyDevourerWorm" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="WormSkeleton" type="Node2D" parent="."]
+position = Vector2( 500, 0 )
+
+[node name="torus1" type="RigidBody2D" parent="WormSkeleton"]
+position = Vector2( 2.74121, -264.06 )
+z_index = 1
+mass = 50.0
+gravity_scale = -2.0
+angular_damp = 7.0
+
+[node name="torus" type="Sprite" parent="WormSkeleton/torus1"]
+position = Vector2( 0.511242, 0.208588 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+
+[node name="spine" type="Sprite" parent="WormSkeleton/torus1"]
+position = Vector2( 0, 5 )
+scale = Vector2( -0.5, 0.45 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="collisionbody" type="CollisionShape2D" parent="WormSkeleton/torus1"]
+shape = SubResource( 1 )
+
+[node name="bead2" type="PinJoint2D" parent="WormSkeleton/torus1" groups=[
+"Beads",
+]]
+position = Vector2( -1.68176, -80.7269 )
+node_a = NodePath("..")
+node_b = NodePath("../../torus2")
+
+[node name="bead2" type="Sprite" parent="WormSkeleton/torus1/bead2"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="torus2" type="RigidBody2D" parent="WormSkeleton"]
+position = Vector2( -0.622315, -428.876 )
+z_index = 1
+mass = 50.0
+gravity_scale = -2.0
+angular_damp = 7.0
+
+[node name="torus" type="Sprite" parent="WormSkeleton/torus2"]
+position = Vector2( 0.511242, 0.208588 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 3
+
+[node name="spine" type="Sprite" parent="WormSkeleton/torus2"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="collisionbody" type="CollisionShape2D" parent="WormSkeleton/torus2"]
+shape = SubResource( 1 )
+
+[node name="bead3" type="PinJoint2D" parent="WormSkeleton/torus2" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+node_b = NodePath("../../torus3")
+
+[node name="bead2" type="Sprite" parent="WormSkeleton/torus2/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="torus3" type="RigidBody2D" parent="WormSkeleton"]
+position = Vector2( 1.05957, -607.146 )
+z_index = 1
+mass = 50.0
+gravity_scale = -2.0
+angular_damp = 7.0
+
+[node name="torus" type="Sprite" parent="WormSkeleton/torus3"]
+position = Vector2( 0.511242, 0.208588 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+
+[node name="spine" type="Sprite" parent="WormSkeleton/torus3"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( -0.5, 0.45 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="collisionbody" type="CollisionShape2D" parent="WormSkeleton/torus3"]
+shape = SubResource( 1 )
+
+[node name="bead3" type="PinJoint2D" parent="WormSkeleton/torus3" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+node_b = NodePath("../../torus4")
+
+[node name="bead2" type="Sprite" parent="WormSkeleton/torus3/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="torus4" type="RigidBody2D" parent="WormSkeleton"]
+position = Vector2( 2.74133, -783.734 )
+z_index = 1
+mass = 50.0
+gravity_scale = -2.0
+angular_damp = 7.0
+
+[node name="torus" type="Sprite" parent="WormSkeleton/torus4"]
+position = Vector2( 0.511242, 0.208588 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 3
+
+[node name="spine" type="Sprite" parent="WormSkeleton/torus4"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="collisionbody" type="CollisionShape2D" parent="WormSkeleton/torus4"]
+shape = SubResource( 1 )
+
+[node name="bead3" type="PinJoint2D" parent="WormSkeleton/torus4" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+
+[node name="bead2" type="Sprite" parent="WormSkeleton/torus4/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="chest" type="StaticBody2D" parent="WormSkeleton"]
+position = Vector2( 0, -96.317 )
+z_index = 1
+collision_layer = 2
+
+[node name="chest" type="Sprite" parent="WormSkeleton/chest"]
+position = Vector2( 0.511242, 0.208588 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+
+[node name="spine" type="Sprite" parent="WormSkeleton/chest"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="collisionbody" type="CollisionShape2D" parent="WormSkeleton/chest"]
+shape = SubResource( 1 )
+
+[node name="bead1" type="PinJoint2D" parent="WormSkeleton/chest" groups=[
+"Beads",
+]]
+position = Vector2( 1.05945, -87.0175 )
+node_a = NodePath("..")
+node_b = NodePath("../../torus1")
+
+[node name="bead1" type="Sprite" parent="WormSkeleton/chest/bead1"]
+position = Vector2( -0.185, 8 )
+scale = Vector2( 0.5, 0.2 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="head" type="Node2D" parent="WormSkeleton/chest"]
+position = Vector2( 0, 96.317 )
+rotation = 0.0174533
+z_index = 2
+
+[node name="collisionhead" type="CollisionPolygon2D" parent="WormSkeleton/chest/head"]
+polygon = PoolVector2Array( 4.59637, 97.5847, -19.4453, 72.1289, -56.2148, -7.06708, -117.026, 24.0457, -141.068, 31.1167, -71.7712, -26.8661, -81.6707, -42.4224, -8.13153, -162.631, 14.4958, -159.802, 56.9223, -69.2925, 79.5497, -38.1797, 126.219, 16.9745, 131.876, 26.8741, 107.834, 14.1461, 65.4075, -15.5524, 27.2238, 74.9573 )
+
+[node name="head" type="Sprite" parent="WormSkeleton/chest/head"]
+position = Vector2( -1.33484, -32.0361 )
+scale = Vector2( 0.7, 0.7 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 5
+
+[node name="spine2" type="Sprite" parent="WormSkeleton/chest/head"]
+position = Vector2( 4.30569, -34.4722 )
+rotation = -0.0174533
+scale = Vector2( 0.3, 0.2 )
+z_index = -2
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 4
+frame = 4
+
+[node name="TorusAnim" type="AnimationPlayer" parent="WormSkeleton"]
+autoplay = "normal"
+anims/damage = SubResource( 4 )
+anims/normal = SubResource( 3 )
+
+[node name="WormAnim" type="AnimationPlayer" parent="."]
+autoplay = "neutral"
+anims/neutral = SubResource( 2 )
