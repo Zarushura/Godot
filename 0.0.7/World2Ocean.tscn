@@ -1,0 +1,288 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/worldocean_white.png" type="Texture" id=1]
+[ext_resource path="res://shaders/waterscrolling.shader" type="Shader" id=2]
+[ext_resource path="res://assets/worldocean_wall2.png" type="Texture" id=3]
+[ext_resource path="res://shaders/scrolling.shader" type="Shader" id=4]
+[ext_resource path="res://assets/worldocean_wall.png" type="Texture" id=5]
+
+
+[sub_resource type="Gradient" id=20]
+colors = PoolColorArray( 0.431036, 0.431036, 0.431036, 1, 0.20838, 0.168495, 0.168495, 0.262745 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 20 )
+
+[sub_resource type="Curve" id=22]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=23]
+curve = SubResource( 22 )
+
+[sub_resource type="ParticlesMaterial" id=24]
+trail_divisor = 4
+trail_size_modifier = SubResource( 23 )
+emission_shape = 2
+emission_box_extents = Vector3( 500, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 178.49
+gravity = Vector3( 0, 100, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -33.62
+radial_accel_random = 0.84
+tangential_accel = 30.9
+tangential_accel_random = 1.0
+damping = 20.0
+angle_random = 0.4
+scale = 11.4
+scale_random = 1.0
+color_ramp = SubResource( 21 )
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, 1 )
+shader_param/speed_scale = 0.07
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 1, 1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 1.0
+shader_param/sine_offset_scale = Vector2( 3, 3 )
+shader_param/sine_wave_size = 0.03
+
+[sub_resource type="StreamTexture" id=26]
+flags = 6
+load_path = "res://.import/worldocean_bg.jpg-eb8cd21b750887b64bbba5fa24ab9c93.stex"
+
+[sub_resource type="ShaderMaterial" id=30]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, -1 )
+shader_param/speed_scale = 0.1
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 0.1, 0.1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 0.2
+shader_param/sine_offset_scale = Vector2( 1, 1 )
+shader_param/sine_wave_size = 0.2
+
+[sub_resource type="StreamTexture" id=31]
+flags = 6
+load_path = "res://.import/worldocean_silver.png-21cd22852d5a4708288e0b895ff63581.stex"
+
+[sub_resource type="ShaderMaterial" id=33]
+shader = ExtResource( 4 )
+shader_param/direction = Vector2( 0, -1 )
+shader_param/speed_scale = 0.05
+
+[sub_resource type="ShaderMaterial" id=32]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, 1 )
+shader_param/speed_scale = 0.02
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 0.1, 0.1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 0.3
+shader_param/sine_offset_scale = Vector2( 1, 1 )
+shader_param/sine_wave_size = 0.05
+
+[sub_resource type="ShaderMaterial" id=34]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, -1 )
+shader_param/speed_scale = 0.02
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 0.1, 0.1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 0.3
+shader_param/sine_offset_scale = Vector2( 1, 1 )
+shader_param/sine_wave_size = 0.05
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, -1 )
+shader_param/speed_scale = 0.1
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 0.1, 0.1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 1.0
+shader_param/sine_offset_scale = Vector2( 3, 3 )
+shader_param/sine_wave_size = 0.05
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 2 )
+shader_param/direction = Vector2( 0, 1 )
+shader_param/speed_scale = 0.1
+shader_param/shadow_color = Color( 1, 1, 1, 0 )
+shader_param/tile_factor = 1.0
+shader_param/aspect_ratio = 1.0
+shader_param/texture_offset_scale = Vector2( 0.1, 0.1 )
+shader_param/texture_offset_height = 1.0
+shader_param/texture_offset_time_scale = 1.0
+shader_param/sine_time_scale = 1.0
+shader_param/sine_offset_scale = Vector2( 3, 3 )
+shader_param/sine_wave_size = 0.05
+
+[sub_resource type="Gradient" id=17]
+colors = PoolColorArray( 0, 0, 0, 1, 0.447059, 0.407843, 0.329412, 0 )
+
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
+width = 400
+
+[sub_resource type="Animation" id=19]
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/white:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 0.705882 ), Color( 1, 1, 1, 0.235294 ) ]
+}
+
+[node name="WorldBetween" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+light_mask = 2
+position = Vector2( 956.803, -18.25 )
+z_index = -1
+amount = 700
+lifetime = 15.0
+preprocess = 20.0
+visibility_rect = Rect2( -600, 200, 1200, 1100 )
+process_material = SubResource( 24 )
+
+[node name="scene" type="Node2D" parent="."]
+light_mask = 2
+z_index = -1
+
+[node name="background" type="Sprite" parent="scene" groups=[
+"scrolling",
+]]
+light_mask = 2
+material = SubResource( 25 )
+position = Vector2( 973.394, 656.529 )
+rotation = 3.14159
+scale = Vector2( 1.1, 0.66 )
+z_index = -1
+texture = SubResource( 26 )
+
+[node name="primesilver" type="Sprite" parent="scene" groups=[
+"otherwayscrolling",
+]]
+modulate = Color( 1, 1, 1, 0.533333 )
+light_mask = 2
+material = SubResource( 30 )
+position = Vector2( 968.054, 656.018 )
+scale = Vector2( 1, 0.62 )
+z_index = -1
+texture = SubResource( 31 )
+
+[node name="white crop" type="Polygon2D" parent="scene" groups=[
+"otherwayscrolling",
+]]
+modulate = Color( 1, 1, 1, 0.235294 )
+light_mask = 2
+material = SubResource( 33 )
+position = Vector2( 979.027, 660 )
+rotation = 2.33001
+scale = Vector2( 1.3, 2.3 )
+z_index = -1
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 355.489, 630.64, -305.356, 233.434, -307.127, -585.782, 334.854, -211.844 )
+uv = PoolVector2Array( -30.7796, 3.58185, 912.402, -0.963623, 941.948, 1019.49, -51.234, 1019.49 )
+
+[node name="ropeR" type="Polygon2D" parent="scene" groups=[
+"scrolling",
+]]
+modulate = Color( 1, 1, 1, 0.235294 )
+light_mask = 2
+material = SubResource( 32 )
+position = Vector2( 1518, 88.5358 )
+z_index = -1
+texture = ExtResource( 5 )
+polygon = PoolVector2Array( 1281.5, 670.863, 46.4996, 664.514, -1304.29, -94.9214, 89.453, -91.7466 )
+uv = PoolVector2Array( 121.336, 2.07742, 660.046, 2.88388, 663.272, 2304.01, 147.143, 2302.4 )
+
+[node name="ropeL" type="Polygon2D" parent="scene" groups=[
+"otherwayscrolling",
+]]
+modulate = Color( 1, 1, 1, 0.235294 )
+light_mask = 2
+material = SubResource( 34 )
+position = Vector2( 673.508, 155.529 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
+z_index = -1
+offset = Vector2( -222.795, -514.641 )
+texture = ExtResource( 5 )
+polygon = PoolVector2Array( 674.169, 682.905, -154.454, 679.73, -538.605, 667.031, -551.304, 86.0422 )
+uv = PoolVector2Array( 121.336, 2.07742, 660.046, 2.88388, 663.272, 2304.01, 147.143, 2302.4 )
+
+[node name="wallR" type="Sprite" parent="scene"]
+light_mask = 2
+material = SubResource( 15 )
+position = Vector2( 1655.24, 652.875 )
+scale = Vector2( 0.8, 0.59 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="wallL" type="Sprite" parent="scene"]
+light_mask = 2
+material = SubResource( 16 )
+position = Vector2( 284.448, 652.875 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.59 )
+z_index = 2
+texture = ExtResource( 3 )
+
+[node name="wall gradient" type="Node2D" parent="scene"]
+visible = false
+light_mask = 2
+z_index = 2
+
+[node name="blackL" type="TextureRect" parent="scene/wall gradient"]
+margin_right = 410.0
+margin_bottom = 1320.0
+texture = SubResource( 18 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blackR" type="TextureRect" parent="scene/wall gradient"]
+margin_left = 1518.0
+margin_right = 1928.1
+margin_bottom = 1320.0
+texture = SubResource( 18 )
+expand = true
+stretch_mode = 1
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldAnim" type="AnimationPlayer" parent="scene"]
+autoplay = "default"
+anims/default = SubResource( 19 )

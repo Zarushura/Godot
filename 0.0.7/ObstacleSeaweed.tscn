@@ -1,0 +1,208 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/EnemyDevourerWorm.png" type="Texture" id=1]
+[ext_resource path="res://ObstacleSeaweed.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 40.0
+height = 95.0
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 40.0
+height = 95.0
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 40.0
+height = 95.0
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 40.0
+height = 95.0
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 40.0
+height = 95.0
+
+[node name="ObstacleSeaweed" type="KinematicBody2D" groups=[
+"Devourer",
+"spiky",
+]]
+position = Vector2( -300, 0 )
+scale = Vector2( 0.7, 0.5 )
+collision_layer = 32
+collision_mask = 11
+script = ExtResource( 2 )
+
+[node name="Skeleton" type="Node2D" parent="."]
+rotation = 1.57079
+
+[node name="seaweed0" type="RigidBody2D" parent="Skeleton"]
+position = Vector2( 0, -96.317 )
+z_index = 1
+collision_layer = 32
+collision_mask = 10
+mass = 100.0
+gravity_scale = 3.0
+linear_velocity = Vector2( 0, 1 )
+linear_damp = 5.0
+
+[node name="spine" type="Sprite" parent="Skeleton/seaweed0"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="bodyphysics" type="CollisionShape2D" parent="Skeleton/seaweed0"]
+shape = SubResource( 6 )
+
+[node name="bead1" type="PinJoint2D" parent="Skeleton/seaweed0" groups=[
+"Beads",
+]]
+position = Vector2( 1.05945, -87.0175 )
+node_a = NodePath("..")
+node_b = NodePath("../../seaweed1")
+
+[node name="bead1" type="Sprite" parent="Skeleton/seaweed0/bead1"]
+position = Vector2( -0.185, 8 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="seaweed1" type="RigidBody2D" parent="Skeleton"]
+position = Vector2( 2.74121, -264.06 )
+z_index = 1
+collision_layer = 2147483680
+collision_mask = 10
+mass = 100.0
+gravity_scale = 3.0
+contacts_reported = 1
+can_sleep = false
+linear_velocity = Vector2( 0, 1 )
+linear_damp = 5.0
+angular_damp = 7.0
+
+[node name="spine" type="Sprite" parent="Skeleton/seaweed1"]
+position = Vector2( 0, 5 )
+scale = Vector2( -0.5, 0.45 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="bodyphysics" type="CollisionShape2D" parent="Skeleton/seaweed1"]
+shape = SubResource( 7 )
+
+[node name="bead2" type="PinJoint2D" parent="Skeleton/seaweed1" groups=[
+"Beads",
+]]
+position = Vector2( -1.68176, -80.7269 )
+node_a = NodePath("..")
+node_b = NodePath("../../seaweed2")
+
+[node name="bead2" type="Sprite" parent="Skeleton/seaweed1/bead2"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="seaweed2" type="RigidBody2D" parent="Skeleton"]
+position = Vector2( -0.622315, -428.876 )
+z_index = 1
+collision_layer = 32
+collision_mask = 10
+mass = 100.0
+gravity_scale = 3.0
+contacts_reported = 1
+can_sleep = false
+linear_velocity = Vector2( 0, 1 )
+linear_damp = 5.0
+angular_damp = 7.0
+
+[node name="spine" type="Sprite" parent="Skeleton/seaweed2"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="bodyphysics" type="CollisionShape2D" parent="Skeleton/seaweed2"]
+shape = SubResource( 8 )
+
+[node name="bead3" type="PinJoint2D" parent="Skeleton/seaweed2" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+node_b = NodePath("../../seaweed3")
+
+[node name="bead2" type="Sprite" parent="Skeleton/seaweed2/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="seaweed3" type="RigidBody2D" parent="Skeleton"]
+position = Vector2( 1.05957, -607.146 )
+z_index = 1
+collision_layer = 32
+collision_mask = 10
+mass = 100.0
+gravity_scale = 3.0
+contacts_reported = 1
+can_sleep = false
+linear_velocity = Vector2( 0, 1 )
+linear_damp = 5.0
+angular_damp = 7.0
+
+[node name="spine" type="Sprite" parent="Skeleton/seaweed3"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( -0.5, 0.45 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="bodyphysics" type="CollisionShape2D" parent="Skeleton/seaweed3"]
+shape = SubResource( 9 )
+
+[node name="bead3" type="PinJoint2D" parent="Skeleton/seaweed3" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+node_b = NodePath("../../seaweed4")
+
+[node name="bead2" type="Sprite" parent="Skeleton/seaweed3/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="seaweed4" type="RigidBody2D" parent="Skeleton"]
+position = Vector2( 2.74133, -783.734 )
+z_index = 1
+collision_layer = 32
+collision_mask = 2147483658
+mass = 100.0
+gravity_scale = 3.0
+contacts_reported = 1
+can_sleep = false
+linear_velocity = Vector2( 0, 1 )
+linear_damp = 5.0
+angular_damp = 7.0
+
+[node name="spine" type="Sprite" parent="Skeleton/seaweed4"]
+position = Vector2( 0.511, 5 )
+scale = Vector2( 0.5, 0.45 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="bodyphysics" type="CollisionShape2D" parent="Skeleton/seaweed4"]
+shape = SubResource( 5 )
+
+[node name="bead3" type="PinJoint2D" parent="Skeleton/seaweed4" groups=[
+"Beads",
+]]
+position = Vector2( 1.68177, -85.772 )
+node_a = NodePath("..")
+
+[node name="bead2" type="Sprite" parent="Skeleton/seaweed4/bead3"]
+position = Vector2( -0.18462, 0.091095 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
